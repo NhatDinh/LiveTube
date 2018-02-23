@@ -12,8 +12,8 @@ import HomeIcon from './components/home_icon';
 const API_KEY = "AIzaSyCR6qSAW-NtKq31C63XzyYDiZ7tsTty9gg";
 class App extends Component {
 	
-	constructor(props) { //props = properties
-		super(props);//black magic
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			liveVideos: [],
@@ -22,8 +22,6 @@ class App extends Component {
 			keyword:''
 		};
 
-		//init search term
-		//type something stupid like this to try the loading icon asjdhg dga skjdh sakjdkas hkasd
 		const initKeywords = ['fkj','tom misch','elon musk','music','dance','spacex','ethereum','stripe','music','patrick collison','stellar','music','festival','fun','love','life','prank','shark tank','random'];
 		let random = Math.floor((Math.random() * 20) + 1);
 		const initKeyword = initKeywords[random];
@@ -52,8 +50,6 @@ class App extends Component {
 		});
 	}
 	render() {
-		//In React, src={...}
-		//../ =Back to main dir
 	return (
 		
 		<div className="row header">
