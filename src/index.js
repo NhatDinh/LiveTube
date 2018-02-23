@@ -31,7 +31,8 @@ class App extends Component {
 	}
 
 	videosSearch(keyword){
-		//search for live videos
+		//search() from 'youtube-api-search'
+		//will be replaced by my own implementation of search method
 		search({key: API_KEY, term: keyword, eventType: 'live'}, (responses) => {
 			this.setState({
 				liveVideos: responses,
@@ -53,8 +54,8 @@ class App extends Component {
 	return (
 		
 		<div className="row header">
-		<HomeIcon
 		
+		<HomeIcon
 		onUpdate={(keyword) => this.videosSearch(keyword)} />
 
 		<h1 className="col-md-3">Live<br/>tubE</h1>
@@ -63,19 +64,17 @@ class App extends Component {
 		onSearchTermChange={(keyword) => this.videosSearch(keyword)}/>
 
 		<div className="row"> 
+			
 		<VideoDetail className="col-md-6" video={this.state.selectedVideo} />
 		
-
 		<div className='row'>
 		<img className='col-md-2' width='80' height='90' src={'../style/images/YTLiveMain.gif'}/>
 		<h1 className='col-md-2'>LIVE <br/>NOW!</h1> 
-		
 		
 		<LiveVideoList 
 		onVideoSelect={(selectedVideo) => this.setState({selectedVideo}) }
 		className="col-md-6" 
 		videos={this.state.liveVideos} />
-		
 		
 		<UpcomingVideoList 
 		className="upcoming-list col-md-5"
@@ -83,16 +82,9 @@ class App extends Component {
 		videos={this.state.upcomingVideos} />
 		</div>
 		</div>
-		
 		</div>
-		
-		
-
 		);
 }
 };
-
-
-
 
 ReactDOM.render(<App />, document.querySelector('.container'));
