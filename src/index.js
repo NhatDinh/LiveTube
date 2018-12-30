@@ -9,7 +9,7 @@ import SearchBar from './components/search_bar';
 import UpcomingVideoList from './components/upcoming_video_list';
 import HomeIcon from './components/home_icon';
 
-const API_KEY = "AIzaSyCR6qSAW-NtKq31C63XzyYDiZ7tsTty9gg";
+const API_KEY = "AIzaSyCZJxQ_zU3rmldovDwgf4_ELj3q9IY3hdk";
 class App extends Component {
 	
 	constructor(props) {
@@ -21,7 +21,7 @@ class App extends Component {
 			selectedVideo: null,
 			keyword:''
 		};
-
+		console.log('working')
 		const initKeywords = ['fkj','tom misch','elon musk','music','dance','spacex','ethereum','stripe','music','patrick collison','stellar','music','festival','fun','love','life','prank','shark tank','random'];
 		let random = Math.floor((Math.random() * 20) + 1);
 		//INIT PAGE LOADING WITH RANDOM QUERY
@@ -52,7 +52,7 @@ class App extends Component {
 	}
 	render() {
 	return (
-		
+		console.log('I was triggered during render')
 		<div className="row header">
 		
 		<HomeIcon
