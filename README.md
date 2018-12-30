@@ -1,11 +1,8 @@
-## LiveTube
+### LiveTube: 
+##### Single page application to broadcasting live and upcoming live Youtube videos.
 
-#### Description: 
-Used React library to create single page application for broadcasting live and upcoming live Youtube videos.
-
-### Demo video:
+#### Demo: 
 ![livetubedemo](https://user-images.githubusercontent.com/35314819/36585100-4ceba97c-1831-11e8-913d-b343821aab30.gif)
-
 
 ### How to run:
  Using terminal, type in these command lines.
