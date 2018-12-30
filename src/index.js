@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import search from 'youtube-api-search';
+import searchYoutube from 'youtube-api-v3-search';
 
 //IMPORT COMPONENTS
 import VideoDetail from './components/video_detail';
@@ -24,26 +24,26 @@ class App extends Component {
 
 		const initKeywords = ['fkj','tom misch','elon musk','music','dance','spacex','ethereum','stripe','music','patrick collison','stellar','music','festival','fun','love','life','prank','shark tank','random'];
 		let random = Math.floor((Math.random() * 20) + 1);
+		//INIT PAGE LOADING WITH RANDOM QUERY
 		const initKeyword = initKeywords[random];
 		console.log('UNIT TEST: initKeyword =',initKeyword);
-		this.videosSearch(initKeyword);//INIT PAGE LOADING 
+		this.videosSearch(initKeyword);
 
 	}
 
 	videosSearch(keyword){
-		//search() from 'youtube-api-search'
-		//will be replaced by my own implementation of search method
-		search({key: API_KEY, term: keyword, eventType: 'live'}, (responses) => {
+		//TODO: Implement a search method from scratch using Fetch or Axios or whatever
+		searchYoutube({key: API_KEY, term: keyword, eventType: 'live'}, (responses) => {
 			this.setState({
 				liveVideos: responses,
 				selectedVideo: responses[0]
 			});
-			console.log(responses);//test
-			console.log(responses[0]);//test
+			console.log(responses);
+			console.log(responses[0]);
 
 		});
 		//search for upcoming live videos
-		search({key: API_KEY, term: keyword, eventType: 'upcoming'}, (responses) => {
+		searchYoutube({key: API_KEY, term: keyword, eventType: 'upcoming'}, (responses) => {
 			this.setState({
 				upcomingVideos: responses,
 			});

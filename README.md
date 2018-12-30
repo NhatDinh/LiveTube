@@ -12,9 +12,8 @@ Used React library to create single page application for broadcasting live and u
  * git clone https://github.com/RickyND/LiveTube.git
  * cd LiveTube
  * npm install 
- * redirect browser to http://localhost
+ * node server.js
+ * redirect browser to http://localhost:8080
 
-### Contributions:
- Comments and pull requests are welcomed!
 
 
