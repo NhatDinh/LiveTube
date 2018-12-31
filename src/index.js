@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import searchYoutube from 'youtube-api-v3-search';
+import search from 'youtube-search';
+import axios from 'Axios';
 
 //IMPORT COMPONENTS
 import VideoDetail from './components/video_detail';
@@ -21,18 +22,22 @@ class App extends Component {
 			selectedVideo: null,
 			keyword:''
 		};
-		console.log('working')
 		const initKeywords = ['fkj','tom misch','elon musk','music','dance','spacex','ethereum','stripe','music','patrick collison','stellar','music','festival','fun','love','life','prank','shark tank','random'];
 		let random = Math.floor((Math.random() * 20) + 1);
-		//INIT PAGE LOADING WITH RANDOM QUERY
 		const initKeyword = initKeywords[random];
-		console.log('UNIT TEST: initKeyword =',initKeyword);
+		console.log('init key:' + initKeyword);//testing yo
 		this.videosSearch(initKeyword);
 
 	}
 
 	videosSearch(keyword){
 		//TODO: Implement a search method from scratch using Fetch or Axios or whatever
+		console.log('method search running')
+		keyword = 'postmalone'
+		const url = 'https://www.googleapis.com/youtube/v3/search?q={{keyword}}&part=snippet&type=video&key=AIzaSyCZJxQ_zU3rmldovDwgf4_ELj3q9IY3hdk'
+		axios.get(url).then(response => console.log(response));
+
+		/* 
 		searchYoutube({key: API_KEY, term: keyword, eventType: 'live'}, (responses) => {
 			this.setState({
 				liveVideos: responses,
@@ -48,11 +53,10 @@ class App extends Component {
 				upcomingVideos: responses,
 			});
 			console.log('Upcoming', responses);
-		});
+		});*/
 	}
 	render() {
 	return (
-		console.log('I was triggered during render')
 		<div className="row header">
 		
 		<HomeIcon

@@ -1,7 +1,7 @@
 {
   "name": "LiveTube",
   "version": "1.0.0",
-  "description": "React App to broadcast live and upcoming live youtube videos.",
+  "description": "Single page React app to broadcasting live and upcoming live youtube videos.",
   "main": "index.js",
   "repository": "",
   "scripts": {
@@ -11,7 +11,11 @@
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "",
+  "engines": {
+    "npm": "6.5.0",
+    "node": "8.9.4"
+  },
+  "author": "Nhat Dinh",
   "license": "ISC",
   "devDependencies": {
     "babel-loader": "^6.2.0",
@@ -20,16 +24,17 @@
     "babel-preset-stage-1": "^6.1.18",
     "chai": "^3.5.0",
     "chai-jquery": "^2.0.0",
-    "jquery": "^2.2.1",
+    "jquery": "^3.3.1",
     "jsdom": "^8.1.0",
-    "mocha": "^2.4.5",
+    "mocha": "^5.2.0",
     "react-addons-test-utils": "^0.14.7",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.2.1",
     "express": "^4.15.2",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.11",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "4.3.0",
@@ -37,6 +42,6 @@
     "redux": "^3.0.4",
     "webpack": "^1.15.0",
     "youtube-api-search": "0.0.5",
-    "youtube-api-v3-search": "^1.2.1"
+    "youtube-search": "^1.1.4"
   }
 }
